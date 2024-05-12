@@ -10,6 +10,7 @@ def send_registration_email(recipient_email,  subject, message, username=None):
     # Your Gmail credentials
     sender_email = os.environ['EMAIL_ID']
     sender_password = os.environ['APP_PASSWORD']
+    # print(sender_password)
 
     # Create the email message
     subject = subject

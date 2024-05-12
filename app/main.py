@@ -128,7 +128,7 @@ async def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
 </html>
 
         """
-        send_registration_email(user.email, subject="Welcome to Time Hackers!", message=message)
+        # send_registration_email(user.email, subject="Welcome to Time Hackers!", message=message)
         # otp = send_otp(user.user_name, user.email)
         # crud.save_otp(db=db, email=user.email, otp=otp)
         # return JSONResponse(content="An Email Verification OTP is send to your email address.", status_code=status.HTTP_201_CREATED)
@@ -159,7 +159,7 @@ async def login(user: schemas.UserLogin, db: Session = Depends(get_db)):
 </body>
 </html>
 """
-            send_registration_email(recipient_email=user.email, subject="Welcome Back!", message=message)
+            # send_registration_email(recipient_email=user.email, subject="Welcome Back!", message=message)
             return JSONResponse(content={"token":create_access_token({"id":str(db_user.user_id),"username":str(db_user.user_name),"email":str(db_user.email)})}, status_code=status.HTTP_202_ACCEPTED)
         else:
             raise HTTPException(status_code=status.HTTP_406_NOT_ACCEPTABLE, detail="Incorrect Password")
