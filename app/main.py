@@ -286,4 +286,6 @@ async def generate_time_table(userdata: schemas.TimeTableCreate, db: Session = D
         
     
 #     return {"message":"Hello, World!"}
-    
+
+if __name__=="__main__":
+    print("Hello, World!")
