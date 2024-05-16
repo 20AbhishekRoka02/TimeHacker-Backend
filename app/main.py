@@ -57,18 +57,18 @@ app.add_middleware(
 class Message(BaseModel):
     message: str
     
-@app.get("/all", response_model=list[schemas.UserBase])
-async def get_users(db: Session = Depends(get_db)):
-    users = db.query(models.User).all()
-    return users
+# @app.get("/all", response_model=list[schemas.UserBase])
+# async def get_users(db: Session = Depends(get_db)):
+#     users = db.query(models.User).all()
+#     return users
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
 
-@app.post("/")
-async def root(message: Message):
-        return JSONResponse(content="You've been registered successfully.", status_code=status.HTTP_201_CREATED)
+# @app.post("/")
+# async def root(message: Message):
+#         return JSONResponse(content="You've been registered successfully.", status_code=status.HTTP_201_CREATED)
     
     # return {"message": f"Hello World! \n Your message: {message.message}"}
 # @app.post("/register")
